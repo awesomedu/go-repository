@@ -1,0 +1,33 @@
+mysql -uroot -p
+关闭Mysql服务	quit
+创建数据库		create database testmysql;
+查询数据库		show databases;
+删除数据库		drop database testmysql;
+选择数据库		use testmysql2;
+创建表		create table personTable (personID int, name varchar(20), gender varchar(10), primary key(personID)); 
+删除表		drop table personTable;
+查看表		describe  personTable;
+1.修改表名：alter table 旧表名 rename 新表名;		alter table personTable rename newpersonTable;
+<1>增加字段		
+在表的最后一个位置添加字段: alter table 表名 add 字段名 属性类型；
+alter table newpersonTable add sex int;
+在表的第一个位置添加字段：alter table 表名 add 字段名 属性类型 first;
+alter table newpersonTable add age int first;
+在表的指定字段之后添加字段alter table 表名 add 字段名 属性类型 after 属性名;
+alter table newpersonTable add height int after age;
+查看下添加字段后的表
+describe newpersonTable;
+<2>删除字段
+alter table 表名 drop 属性名
+alter table newpersonTable drop gender;
+alter table 表名 modify 属性名 数据类型;
+alter table newpersonTable modify height char;
+<3>修改字段的数据类型
+alter table 表名 modify 属性名 数据类型;
+alter table newpersonTable modify height char;
+<4>修改字段的名字
+alter table 表名 change 旧属性名 新属性名 数据类型
+alter table newpersonTable change personID userID int;
+<5>修改字段顺序
+alter table 表名 modify 属性名1 数据类型 after 属性名2;
+alter table newpersonTable  modify name  varchar(20) after age;
