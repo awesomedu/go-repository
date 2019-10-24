@@ -11,7 +11,7 @@ type Books struct{
 
 func main()  {
 	fmt.Println(Books{"Go语言","www.baidu.com","语言教程",2000})
-
+	fmt.Println("-------------")
 	// 忽略字段
 	fmt.Println(Books{title:"go",author:"www.baidu.com"})
 
